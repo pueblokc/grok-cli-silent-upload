@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 230" font-family="Segoe UI, system-ui, sans-serif" role="img" aria-label="Pipeline diagram: two directories flow into per-turn snapshots, deduplicated blobs, a staging queue, tarballs, and finally cloud storage">
+  <defs>
+    <marker id="arr2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#7f849c"/>
+    </marker>
+    <marker id="arrR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#f38ba8"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="780" height="230" rx="12" fill="#1e1e2e"/>
+  <g transform="translate(10,10)">
+  <rect x="10" y="20" width="150" height="52" rx="8" fill="#181825" stroke="#89b4fa"/>
+  <text x="85" y="42" fill="#cdd6f4" font-size="12.5" text-anchor="middle" font-weight="600">launch directory</text>
+  <text x="85" y="60" fill="#a6adc8" font-size="11" text-anchor="middle">(my whole home dir)</text>
+  <rect x="10" y="130" width="150" height="52" rx="8" fill="#181825" stroke="#89b4fa"/>
+  <text x="85" y="152" fill="#cdd6f4" font-size="12.5" text-anchor="middle" font-weight="600">~/.claude</text>
+  <text x="85" y="170" fill="#a6adc8" font-size="11" text-anchor="middle">(second tool's config)</text>
+  <line x1="160" y1="46" x2="230" y2="88" stroke="#7f849c" stroke-width="2" marker-end="url(#arr2)"/>
+  <line x1="160" y1="156" x2="230" y2="114" stroke="#7f849c" stroke-width="2" marker-end="url(#arr2)"/>
+  <rect x="235" y="75" width="120" height="52" rx="8" fill="#181825" stroke="#45475a"/>
+  <text x="295" y="97" fill="#cdd6f4" font-size="12" text-anchor="middle" font-weight="600">snapshot</text>
+  <text x="295" y="114" fill="#a6adc8" font-size="10.5" text-anchor="middle">before + after EVERY turn</text>
+  <line x1="355" y1="101" x2="400" y2="101" stroke="#7f849c" stroke-width="2" marker-end="url(#arr2)"/>
+  <rect x="405" y="75" width="105" height="52" rx="8" fill="#181825" stroke="#45475a"/>
+  <text x="457" y="97" fill="#cdd6f4" font-size="12" text-anchor="middle" font-weight="600">dedup blobs</text>
+  <text x="457" y="114" fill="#a6adc8" font-size="10.5" text-anchor="middle">upload_queue\</text>
+  <line x1="510" y1="101" x2="555" y2="101" stroke="#7f849c" stroke-width="2" marker-end="url(#arr2)"/>
+  <rect x="560" y="75" width="85" height="52" rx="8" fill="#181825" stroke="#45475a"/>
+  <text x="602" y="97" fill="#cdd6f4" font-size="12" text-anchor="middle" font-weight="600">.tar.gz</text>
+  <text x="602" y="114" fill="#a6adc8" font-size="10.5" text-anchor="middle">per turn</text>
+  <line x1="645" y1="101" x2="690" y2="101" stroke="#f38ba8" stroke-width="2.5" marker-end="url(#arrR)"/>
+  <ellipse cx="722" cy="101" rx="34" ry="26" fill="#181825" stroke="#f38ba8" stroke-width="2"/>
+  <text x="722" y="98" fill="#f38ba8" font-size="11" text-anchor="middle" font-weight="700">GCS</text>
+  <text x="722" y="112" fill="#a6adc8" font-size="9.5" text-anchor="middle">bucket</text>
+  </g>
+</svg>
